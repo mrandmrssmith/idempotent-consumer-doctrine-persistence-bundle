@@ -1,0 +1,17 @@
+services:
+    MrAndMrsSmith\IdempotentConsumerDoctrinePersistenceBundle\:
+        resource: '../'
+        autowire: true
+        autoconfigure: true
+
+
+    mms_idempotent_consumer.doctrine_persistence.repository:
+        class: MrAndMrsSmith\IdempotentConsumerDoctrinePersistenceBundle\Persistence\MessageStatusDoctrineRepository
+        autoconfigure: true
+        autowire: true
+        public: true
+
+
+    MrAndMrsSmith\IdempotentConsumerBundle\Persistence\MessageStatusPersister: '@mms_idempotent_consumer.doctrine_persistence.repository'
+    MrAndMrsSmith\IdempotentConsumerBundle\Persistence\MessageStatusRetriever: '@mms_idempotent_consumer.doctrine_persistence.repository'
+    MrAndMrsSmith\IdempotentConsumerBundle\Persistence\MessageStatusUpdater: '@mms_idempotent_consumer.doctrine_persistence.repository'
