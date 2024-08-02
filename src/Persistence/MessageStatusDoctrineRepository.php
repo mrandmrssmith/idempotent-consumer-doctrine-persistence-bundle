@@ -13,13 +13,19 @@ use MrAndMrsSmith\IdempotentConsumerDoctrinePersistenceBundle\Exception\MessageS
 use MrAndMrsSmith\IdempotentConsumerDoctrinePersistenceBundle\Factory\MessageStatusEntityFactory;
 use MrAndMrsSmith\IdempotentConsumerDoctrinePersistenceBundle\Factory\MessageStatusFactory;
 
+/**
+ * @template T of MessageStatusEntity
+ * @extends ServiceEntityRepository<T>
+ */
 class MessageStatusDoctrineRepository extends ServiceEntityRepository implements
     MessageStatusPersister,
     MessageStatusRetriever,
     MessageStatusUpdater
 {
+    /** @var MessageStatusEntityFactory */
     private $messageStatusEntityFactory;
 
+    /** @var MessageStatusFactory */
     private $messageStatusFactory;
 
     public function __construct(

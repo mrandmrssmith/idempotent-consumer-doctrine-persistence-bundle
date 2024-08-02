@@ -9,6 +9,10 @@ class MessageStatusFactory
 {
     public function createMessageStatusEntity(MessageStatusEntity $messageStatus): MessageStatus
     {
-        return new MessageStatus($messageStatus->getMessageStatus(), $messageStatus->getMessageIdempotentKey());
+        return new MessageStatus(
+            $messageStatus->getMessageStatus(),
+            $messageStatus->getMessageIdempotentKey(),
+            $messageStatus->getName()
+        );
     }
 }

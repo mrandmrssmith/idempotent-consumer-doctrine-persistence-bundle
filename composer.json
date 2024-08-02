@@ -1,25 +1,28 @@
 {
-    "name": "mrandmrssmith/idempotent-consumer-bundle",
+    "name": "mrandmrssmith/idempotent-consumer-doctrine-persistence-bundle",
     "description": "idempotent-consumer-bundle",
     "type": "library",
     "license": "MIT",
     "require": {
         "php": ">=7.2",
         "ext-json": "*",
-        "symfony/messenger": ">=3.4",
-        "symfony/serializer": ">=3.4",
-        "symfony/property-access": ">=3.4"
+        "symfony/symfony": ">=3.4",
+        "mrandmrssmith/idempotent-consumer-bundle": "dev-main",
+        "doctrine/dbal": ">=2.0",
+        "doctrine/doctrine-bundle": ">=2.0",
+        "doctrine/doctrine-migrations-bundle": ">=3.0",
+        "doctrine/migrations": ">=3.0",
+        "doctrine/orm": ">=2.5"
     },
     "authors": [
         {
             "name": "Michal Boryczko",
             "email": "michal.boryczko@smithhotels.com"
-        },
-
+        }
     ],
     "autoload": {
         "psr-4": {
-            "MrAndMrsSmith\\IdempotentConsumerBundle\\": "/src"
+            "MrAndMrsSmith\\IdempotentConsumerDoctrinePersistenceBundle\\": "/src"
         }
     },
     "config": {
@@ -33,5 +36,11 @@
         "roave/security-advisories": "dev-master",
         "symplify/easy-coding-standard": "^12.1",
         "vimeo/psalm": "^4.30||^5.22"
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/mrandmrssmith/idempotent-consumer-bundle.git"
+        }
+    ]
 }
