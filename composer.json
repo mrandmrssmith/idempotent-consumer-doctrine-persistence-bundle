@@ -6,7 +6,6 @@
     "require": {
         "php": ">=7.2",
         "ext-json": "*",
-        "symfony/symfony": ">=3.4",
         "mrandmrssmith/idempotent-consumer-bundle": "dev-main",
         "doctrine/dbal": ">=2.0",
         "doctrine/doctrine-bundle": ">=2.0",
