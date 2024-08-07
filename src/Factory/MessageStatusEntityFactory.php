@@ -12,6 +12,7 @@ class MessageStatusEntityFactory
         $messageStatusEntity = new MessageStatusEntity();
         $messageStatusEntity->setMessageStatus($messageStatus->getStatus());
         $messageStatusEntity->setMessageIdempotentKey($messageStatus->getIdempotentKey());
+        $messageStatusEntity->setName($messageStatus->getMessageName());
 
         return $messageStatusEntity;
     }
@@ -22,5 +23,6 @@ class MessageStatusEntityFactory
     ): void {
         $messageStatusEntity->setMessageStatus($messageStatus->getStatus());
         $messageStatusEntity->setMessageIdempotentKey($messageStatus->getIdempotentKey());
+        $messageStatusEntity->setName($messageStatus->getMessageName());
     }
 }
