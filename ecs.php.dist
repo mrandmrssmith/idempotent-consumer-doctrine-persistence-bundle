@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
+use PhpCsFixer\Fixer\Basic\NoTrailingCommaInSinglelineFixer;
 use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
 use Symplify\CodingStandard\Fixer\Annotation\RemovePHPStormAnnotationFixer;
 use Symplify\CodingStandard\Fixer\Commenting\RemoveUselessDefaultCommentFixer;
@@ -10,15 +11,16 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return ECSConfig::configure()
     ->withPaths([
-        __DIR__ . '/Serializer',
-        __DIR__ . '/Tests',
+        __DIR__ . '/src',
+        __DIR__ . '/tests',
     ])
 
     // add a single rule
     ->withRules([
         NoUnusedImportsFixer::class,
         RemovePHPStormAnnotationFixer::class,
-        RemoveUselessDefaultCommentFixer::class
+        RemoveUselessDefaultCommentFixer::class,
+        NoTrailingCommaInSinglelineFixer::class,
     ])
 
     // add a rule with configuration
@@ -33,7 +35,7 @@ return ECSConfig::configure()
         false,
         false,
         false,
-        true
+        false
     )
 
     // add sets - group of rules
@@ -50,4 +52,8 @@ return ECSConfig::configure()
         true,
         false,
         true
+    )
+    ->withSkip([
+        __DIR__ . '/src/DependencyInjection',
+    ]
 );

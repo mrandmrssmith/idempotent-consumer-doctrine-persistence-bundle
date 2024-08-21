@@ -21,7 +21,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "MrAndMrsSmith\\IdempotentConsumerDoctrinePersistenceBundle\\": "/src"
+            "MrAndMrsSmith\\IdempotentConsumerDoctrinePersistenceBundle\\": "./src",
+            "Tests\\UnitTests\\" : "./tests/UnitTests"
         }
     },
     "config": {
