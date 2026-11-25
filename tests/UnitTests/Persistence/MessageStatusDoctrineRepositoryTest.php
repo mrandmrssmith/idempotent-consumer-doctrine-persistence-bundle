@@ -42,12 +42,13 @@ class MessageStatusDoctrineRepositoryTest extends TestCase
         $this->managerRegister = $this->createMock(ManagerRegistry::class);
         $this->entityManager = $this->createMock(EntityManagerInterface::class);
 
+        $metaDataClass = new ClassMetadata(MessageStatus::class);
         $this->managerRegister
             ->method('getManagerForClass')
             ->willReturn($this->entityManager);
         $this->entityManager
             ->method('getClassMetadata')
-            ->willReturn($this->createMock(ClassMetadata::class));
+            ->willReturn($metaDataClass);
 
         $this->repository = new MessageStatusDoctrineRepository(
             $this->managerRegister,
