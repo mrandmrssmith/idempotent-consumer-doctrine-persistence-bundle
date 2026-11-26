@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=php:7.2-cli-alpine3.12
+ARG BASE_IMAGE=php:7.4-cli-alpine3.16
 
 FROM ${BASE_IMAGE}
 
