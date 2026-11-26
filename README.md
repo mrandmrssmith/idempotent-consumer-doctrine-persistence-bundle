@@ -4,6 +4,15 @@ This bundle provide persistence layer for idempotent consumer using doctrine
 
 ## Installation
 
+## Requirements
+
+| PHP          | Symfony                      |
+|--------------|------------------------------|
+| 7.4, 8.0–8.3 | 3.4, 4.4, 5.4, 6.4, 7.4      |
+
+Tested in CI with: PHP 7.4 + Symfony 3.4 (lowest), PHP 7.4 + Symfony 5.4,
+PHP 8.1 + Symfony 6.4 and PHP 8.3 + Symfony 7.4.
+
 Add this package to your project
 ```shell
 composer require mrandmrssmith/idempotent-consumer-doctrine-persistence-bundle
